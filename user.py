@@ -31,6 +31,13 @@ class User:
         for user in cls.user_list:
             if user.username == username:
                 return user
+            
+    @classmethod
+    def find_by_username(cls,username):
+        """
+        Method that checks if a user exists from the user list.
+        """
+    
         
         
     
