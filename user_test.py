@@ -47,8 +47,13 @@ class TestUser(unittest.TestCase):
     
     def test_find_user_by_username(self):
         """
-        
+        Test to find out if we can find user by username and display information
         """
+        self.new_user.save_user()
+        test_user = User('Ahmed','hajia')
+        test_user.save_user()
         
+        found_user = User.find_by_username("Ahmed")
+        self.assertEqual(found_user.password, test_user.password)
 if __name__ == '__main__':
     unittest.main()

@@ -22,5 +22,8 @@ class User:
         """
         User.user_list.remove(self)
         
+    @classmethod
+    
+        
     
     
