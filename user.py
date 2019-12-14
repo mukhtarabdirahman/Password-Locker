@@ -23,6 +23,7 @@ class User:
         User.user_list.remove(self)
         
     @classmethod
+    def find_by_username(cls,username):
     
         
     
