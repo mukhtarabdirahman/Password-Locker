@@ -10,7 +10,9 @@ class TestUser(unittest.TestCase):
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
-        ''' 
+        '''
+        self.assertEqual() 
+        self.assertEqual() 
     
 if __name__ == '__main__':
     unittest.main()
