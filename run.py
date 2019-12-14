@@ -14,5 +14,15 @@ def save_user(user):
     
     user.save_user()
     
+def delete_user(user):
+    	'''
+	Function that deletes a user
+	'''
+
+	user.delete_user()
+
+
+
+    
     
     
