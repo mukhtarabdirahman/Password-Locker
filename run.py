@@ -15,18 +15,37 @@ def save_user(user):
     user.save_user()
     
 def delete_user(user):
-    	'''
-	Function that deletes a user
-	'''
+    '''
+    Function that deletes a user
+    '''
+    
+    user.delete_user()
+    
+def find_user(username):
+    """
+    Function that find a User
+    """
+    return User.find_by_username(username)
 
-	user.delete_user()
- 
-def delete_user(user):
-    	'''
-	Function that deletes a user
-	'''
+def check_existing_users(username):
+    """
+    Function that search for existing user
+    """
+    return User.user_exist(username)
 
-	user.delete_user()
+def display_all_users():
+    """
+    Function that returns all the saved  user
+    """
+    return User.display_all_users()
+    
+
+    
+    
+
+    
+    
+
 
 
 
