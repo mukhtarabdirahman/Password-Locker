@@ -24,6 +24,15 @@ class User:
         
     @classmethod
     def find_by_username(cls,username):
+        """
+        Method that takes in a name and returns a user that matches that name.
+        """
+        
+        for user in cls.user_list:
+            if user.username == username:
+                return user
+        
+        
     
         
     
