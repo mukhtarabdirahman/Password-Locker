@@ -6,13 +6,13 @@ class TestUser(unittest.TestCase):
         """
         Set up method to run before each test cases.
         """
-        self.new_user = User('mukhtarabdirahman''codePanther') # created user object
+        self.new_user = User('mukhtarabdirahman','codePanther') # created user object
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual() 
-        self.assertEqual() 
+        self.assertEqual(self.new_user.username,'mukhtarabdirahman') 
+        self.assertEqual(self.new_user.password,'codePanther') 
     
 if __name__ == '__main__':
     unittest.main()
