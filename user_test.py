@@ -6,7 +6,7 @@ class TestUser(unittest.TestCase):
         """
         Set up method to run before each test cases.
         """
-    
+        self.new_user = User('mukhtarabdirahman') # created user object 
     
 if __name__ == '__main__':
     unittest.main()
