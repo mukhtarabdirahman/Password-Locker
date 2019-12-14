@@ -6,7 +6,11 @@ class TestUser(unittest.TestCase):
         """
         Set up method to run before each test cases.
         """
-        self.new_user = User('mukhtarabdirahman') # created user object 
+        self.new_user = User('mukhtarabdirahman''codePanther') # created user object
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        ''' 
     
 if __name__ == '__main__':
     unittest.main()
