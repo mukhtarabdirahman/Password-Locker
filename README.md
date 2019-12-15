@@ -10,11 +10,24 @@
 - Generate a password for a new credential/account
 
 | Behaviour | Input | Output|
-| :...........| :............:|:............:|
+| :...........|  :............: |:............: |
 | Display guides for navigation | **In terminal: $./run.py**| Hello Welcome to our user list.what would you like to do? :Use these short codes : cu - create a new user, du - display users, fu -find a user, x -exit the user list|
-|Display prompt for creating an account| **Enter: cu** | Enter user name and password .|
-|Display prompt for displaying  users | **Enter: du** | Dispaly user name. |
-|Display prompt for Finding a user| **Enter: fu** | Finding existing user. |
-| Log out account | **Enter: x** | You have loogeed out of your account. |
+| Display prompt for creating an account|  **Enter: cu** |  Enter user name and password . |
+| Display prompt for displaying  users | **Enter: du** |  Dispaly user name. |
+| Display prompt for Finding a user |  **Enter: fu** |    Finding existing user. |
+| Log out account  |  **Enter: x** |  You have loogeed out of your account.  |
+
+## Author 
+- Ahmed Mukhtar
+
+## Technologies useed
+- Python3.6
+## SetUp/ Installation Requirements
+- pthon3.6
+- For linux/uuntu users : Git
+## Cloning
+-  In your terminal 
+   $ git clone https://github.com/mukhtaradirahman/Password-Locker.git
+   $ cd Python-password locker
 
 
