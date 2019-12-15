@@ -23,14 +23,14 @@
 ## Technologies useed
 - Python3.6
 ## SetUp/ Installation Requirements
-- pthon3.6
+- python3.6
 - For linux/uuntu users : Git
 ## Cloning
 -  In your terminal
 
    - $ git clone https://github.com/mukhtarabdirahman/Password-Locker
 
-   - $ cd Python-password locker
+   - $ cd password locker
 ## Running the Application
 - $ ./run.py
 
