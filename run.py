@@ -1,117 +1,179 @@
 #!/usr/bin/env python3.6
+from account import Account
+from credential import Credential
 
-from user import User
-
-def create_user(username,password):
-    """
-    Function to create a user
-    """
-    new_user = User(username,password)
-    return new_user
-def save_user(user):
-    """
-    Function to save user
-    """
-    
-    user.save_user()
-    
-def delete_user(user):
+def create_account(account_name,user_name,password,email):
     '''
-    Function that deletes a user
+    Function to create a new account
     '''
-    
-    user.delete_user()
-    
-def find_user(username):
-    """
-    Function that find a User
-    """
-    return User.find_by_username(username)
+    new_account = Account(account_name,user_name,password,email)
+    return new_account
 
-def check_existing_users(username):
-    """
-    Function that search for existing user
-    """
-    return User.user_exist(username)
+def save_accounts(account):
+    '''
+    Function to save account
+    '''
+    account.save_account()    
 
-def display_all_users():
-    """
-    Function that returns all the saved  user
-    """
-    return User.display_all_users()
+def del_account(account):
+    '''
+    Function to delete a account
+    '''
+    account.delete_account()    
+
+
+def find_account(name):
+    '''
+    Function that finds a account by nane and returns the account
+    '''
+    return Account.find_by_name(name)    
+
+def check_existing_accounts(name):
+    '''
+    Function that check if an account exists with that name and return a Boolean
+    '''
+    return Account.account_exist(name)    
+
+def display_accounts():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return Account.display_accounts()  
+ #_________________________________________CREDENTIALS____________________________________________________________________
+
+
+def create_credentials(credentials_name,usr_name,password,email):
+    '''
+    Function to create a new account
+    '''
+    new_credentials = Credential(credentials_name,usr_name,password,email)
+    return new_credentials
+
+def save_credentials(credentials):
+    '''
+    Function to save account
+    '''
+    credentials.save_credentials()    
+
+def del_credentials(credentials):
+    '''
+    Function to delete a account
+    '''
+    credentials.delete_credentials()    
+
+
+def find_credentials(name):
+    '''
+    Function that finds a account by nane and returns the account
+    '''
+    return Credential.find_by_name(name)    
+
+def check_existing_credentials(name):
+    '''
+    Function that check if an account exists with that name and return a Boolean
+    '''
+    return Credential.credentials_exist(name)    
+
+def display_credentials():  
+    '''
+    Function that returns all the saved accounts
+    '''
+    return Credential.display_credentials() 
+
+
+
+
 def main():
-    print("Hello Welcome to our user list.")
-    print("what would you like to do?")
+    print("Password Locker. What is your name?")
+    user_name = input()
+    print(f"Hello {user_name}, sign up to Password Locker to create an account.")
     print('\n')
-    
     while True:
-        print("Use these short codes : cu - create a new user, du - display users, fu -find a user, x -exit the user list")
+        print("Use these known short codes to operate :\n SU -> SIGN UP.\n DA -> Display your account.\n LN ->LOGIN.\n ex ->exit Pass Word Locker. ")
         short_code = input().lower()
-        
-        if short_code == 'cu':
-            print("New User")
-            print("-"*10)
-            
-            print("Username......")
-            username = input()
-            
-            print("Password......")
-            password = input()
-            
-            save_user(create_user(username,password))
-            print('\n')
-            print(f"New User {username} created")
-            print('\n')
-            
-        elif short_code == 'du':
-            if display_all_users():
-                print("Here's the list of all saved users:")
-                print('\n')
-                
-                for user in display_all_users():
-                    print(f"{user.username}")
-                    
-                    print('\n')
-                    
+        if short_code == 'su':
+            print("Create a Password Locker Account")
+            print("_"*100)
+            account_name = input('Account name:')
+            print ('\n')
+            u_name = input('User name:')
+            print ('\n')
+            pwd = input('Password : ')
+            print ('\n')
+            email_address = input('Email address:')
+            save_accounts(create_account(account_name,u_name,pwd,email_address)) 
+            print ('\n')
+            print(f"A New {account_name} Account with the user name  {u_name} has been created.")
+            print(f"You can now login to your {account_name} account using your password.")
+            print ('\n')
+        elif short_code == 'da':
+             if display_accounts():
+                 print("Here is your account and your details")
+                 print('\n')
+                 for account in display_accounts():
+                     print(f"Account name:{account.account_name}  User name: {account.user_name} Password:{account.password}")
+                     print('\n')
+             else:
+                 print('\n')
+                 print("You dont seem to have created an account.Sign up to create a new account.")
+                 print('\n')
+        elif short_code == 'ln':
+            print("Enter your password to login.")
+            search_account = input()
+            if check_existing_accounts(search_account):
+                search_cred = find_account(search_account)
+                print("\033[1;32;1m   \n")
+                print(f"You are now logged in to your {account_name} account")
+                print("\033[1;37;1m   \n")
+                #========================================CREDENTIALS AREA=======================================================================
+                while True:
+                    print('''
+                    Use these short codes:
+                    CA -> Create new credential.
+                    DC -> Display your credentials list
+                    ex ->Log out your credentials account.''')
+                    short_code = input().lower()
+                    if short_code == "ca":
+                        print("Create new credential")
+                        print('_' * 20)
+                        credentials_name = input('Credential of Social media Name:')
+                        print('\n')
+                        usr_name = input(f"{credentials_name} user name:")
+                        print('\n')
+                        print('*' * 20)
+                        pwd = input(f"{credentials_name} password:")
+                        save_credentials(create_credentials(credentials_name,u_name,pwd,email_address))
+                        print('\n')
+                        print(f"A New {credentials_name} Account with the user name  {usr_name} has been created.")
+                        print ('\n')
+                    elif short_code == 'dc':
+                         if display_credentials():
+                             print("Here is your credentials")
+                             print('\n')
+                             for credentials in display_credentials():
+                                 print(f"Credential name:{credentials.credentials_name}  User name: {credentials.usr_name} Password:{credentials.password}")
+                                 print('\n')
+                         else:
+                              print('\n')
+                              print("You don't seem to have created any account yet")
+                              print('\n')
+                    elif short_code == "ex":
+                        print('\n')
+                        print(f"You have logged out your {account_name} account")
+                        print('\n')
+                        break
+                        
             else:
-                
                 print('\n')
-                print("You don't seem to have any users saved yet.")
+                print("WRONG PASSWORD!! PLEASE ENTER CORRECT PASSWORD TO LOGIN")
                 print('\n')
-                
-        elif short_code == 'fu':
-            
-            print("Please enter the user you want to search:")
-            
-            search_user = input()
-            
-            if check_existing_users(search_user):
-                
-                searched_user = find_user(search_user)
-                print(f"{searched_user.username}")
-                print('-' * 20)
-            else:
-                print("That user does not exist!")
-
-
+                print('\n')
+                    
+        elif short_code == "ex":
+                    print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
+                    break
+        else:
+                    print("I really didn't get that. Please use the short codes")
 
 if __name__ == '__main__':
-
-    main()
-
-
-
-    
-
-    
-    
-
-    
-    
-
-
-
-
-    
-    
-    
+    main()                            
