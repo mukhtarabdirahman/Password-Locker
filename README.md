@@ -9,13 +9,15 @@
 - Store my existing login credentials
 - Generate a password for a new credential/account
 
-| Behaviour | Input | Output|
-| :...........|  :............: |:............: |
-| Display guides for navigation | **In terminal: $./run.py**| Hello Welcome to our user list.what would you like to do? :Use these short codes : cu - create a new user, du - display users, fu -find a user, x -exit the user list|
-| Display prompt for creating an account|  **Enter: cu** |  Enter user name and password . |
-| Display prompt for displaying  users | **Enter: du** |  Dispaly user name. |
-| Display prompt for Finding a user |  **Enter: fu** |    Finding existing user. |
-| Log out account  |  **Enter: x** |  You have loogeed out of your account.  |
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Display guides for navigation | **In terminal: $./run.py** | Hello Welcome to your Pass Word Locker. What is your name? (once you enter your nname):Use these known short codes to operate : SU -> SIGN UP.  DA -> Display your account.  LN ->LOGIN.  ex ->exit Pass Word Locker. |
+| Display prompt for creating an account | **Enter: SU** | Enter account name, user name password and email .|
+| Display prompt for login in | **Enter: LN** | Enter your account password to login |
+| Once logged in | **You are now logged in to your  account** |  Use these short codes:CA -> Create new credential.DC -> Display your credentials list.  ex ->Log out your credentials account. |
+| Display prompt for creating a credential | **Enter: CA** | Create new credential, Credential name: and password |
+| Display a list of credentials | **Enter: DC** | Prints a list of saved credentials |
+| Log out account  | **Enter: ex** | You have logged out your  account |
 
 ## Author 
 - Ahmed Mukhtar
