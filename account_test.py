@@ -12,10 +12,10 @@ class TestAccount(unittest.TestCase):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual(self.new_credentials.credentials_name,"Ahmed")
-        self.assertEqual(self.new_credentials.usr_name,"Mukhtar")
-        self.assertEqual(self.new_credentials.password,"abc234")
-        self.assertEqual(self.new_credentials.email,"mukhtarabdirahman@gmail.com")
+        self.assertEqual(self.new_account.account_name,"Ahmed")
+        self.assertEqual(self.new_account.user_name,"Mukhtar")
+        self.assertEqual(self.new_account.password,"abc234")
+        self.assertEqual(self.new_account.email,"mukhtarabdirahman@gmail.com")
 
     def test_save_account(self):
         '''
@@ -60,7 +60,7 @@ class TestAccount(unittest.TestCase):
         '''
 
         self.new_account.save_account()
-        test_account = Account("Test","user","0711223344","test@user.com") # new account
+        test_account = Account("Test","user","0741421079","test@user.com") # new account
         test_account.save_account()
 
         found_account = Account.find_by_name("Test")
@@ -72,10 +72,10 @@ class TestAccount(unittest.TestCase):
         '''
 
         self.new_account.save_account()
-        test_account = Account("Test","user","0711223344","test@user.com") # new account
+        test_account = Account("Test","user","0741421079","test@user.com") # new account
         test_account.save_account()
 
-        account_exists = Account.account_exist("0711223344")
+        account_exists = Account.account_exist("0741421079")
 
         self.assertTrue(account_exists)
     def test_display_all_accounts(self):
