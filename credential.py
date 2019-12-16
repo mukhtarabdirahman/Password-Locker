@@ -28,33 +28,33 @@ class Credential:
         Credential.credentials_list.remove(self)   
 
 
-    # @classmethod
-    # def find_by_name(cls,name):
-    #     for credentials in cls.credentials_list:
-    #         if credentials.credentials_name == name:
-    #             return credentials  
+    @classmethod
+    def find_by_name(cls,name):
+        for credentials in cls.credentials_list:
+            if credentials.credentials_name == name:
+                return credentials  
 
 
-    # @classmethod
-    # def credentials_exist(cls,name):
-    #     '''
-    #     Method that checks if a credentials exists from the credentials list.
-    #     Args:
-    #         name: Acc name to search if it exists
-    #     Returns :
-    #         Boolean: True or false depending if the credentials exists
-    #     '''
-    #     for credentials in cls.credentials_list:
-    #         if credentials.password == name:
-    #                 return credentials
+    @classmethod
+    def credentials_exist(cls,name):
+        '''
+        Method that checks if a credentials exists from the credentials list.
+        Args:
+            name: Acc name to search if it exists
+        Returns :
+            Boolean: True or false depending if the credentials exists
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.password == name:
+                    return credentials
 
-    #     return False      
+        return False      
 
 
-    # @classmethod
-    # def display_credentials(cls):  #check this line later
-    #     '''
-    #     method that returns the credentials list
-    #     '''
-    #     return cls.credentials_list            
+    @classmethod
+    def display_credentials(cls):  #check this line later
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credentials_list            
                       
