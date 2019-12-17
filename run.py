@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.6
 from account import Account
 from credential import Credential
+import random
+import string
 
 def create_account(account_name,user_name,password,email):
     '''
@@ -98,7 +100,16 @@ def main():
             print ('\n')
             u_name = input('User name:')
             print ('\n')
-            pwd = input('Password : ')
+            print("to generate password use gp or use your own using op")
+            own_password = input("choice ")
+            if own_password == "gp":
+                def randomStringDigits(stringLength=6):
+                    lettersAndDigits = string.ascii_letters + string.digits
+                    return ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
+                print ("Generating a Random String including letters and digits")
+                print ("First Random String is  ", randomStringDigits(8))
+            elif own_password == "op":
+                pwd = input('Password : ')
             print ('\n')
             email_address = input('Email address:')
             save_accounts(create_account(account_name,u_name,pwd,email_address)) 
