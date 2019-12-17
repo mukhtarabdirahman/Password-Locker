@@ -109,7 +109,8 @@ def main():
                 print ("Generating a Random String including letters and digits")
                 print ("First Random String is  ", randomStringDigits(8))
             elif own_password == "op":
-                pwd = input('Password : ')
+                print('/n')
+            pwd = input('Password : ')
             print ('\n')
             email_address = input('Email address:')
             save_accounts(create_account(account_name,u_name,pwd,email_address)) 
